@@ -1,0 +1,90 @@
+
+<div class="orderBody">
+
+    <div class = "headOrder">
+        <a ui-sref="main">
+            <span><i class="fa fa-arrow-left fa-2x container icon col-md-1"></i></span>
+        </a>
+        <h4 class="col-md-8">{{movieDetails.Title}}</h4>
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src={{movieTrailer}}></iframe>
+    </div>
+
+    <div class = "container">
+
+        <div class="movieDetailsOrder">
+            <p><span class=" greenColor">{{movieDetails.Genre}}</span><span class="greyColor"> {{movieDetails.Country}}</span></p>
+            <p><span class=" greyColor">Director:</span><span class="greyLightColor"> {{movieDetails.Director}}</span></p>
+            <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.Actors.substring(0, movieDetails.Actors.indexOf(',') + 7)}}...</span></p>
+            <p class = " greyColor" ng-click="showCast = !showCast" ng-hide="showCast">See full cast  <i class="fa fa-angle-right fa-1x icon" ></i></p>
+        </div>
+        <!--<div class = "Rating">-->
+            <!--<span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>-->
+        <!--</div>-->
+        <div class="c100 p{{imdbRating}} small green">
+            <span>{{movieDetails.imdbRating}}<br>imdb</span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+        </div>
+        <div class = "fullCast" ng-show="showCast" ng-click="showCast = !showCast">
+            <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>
+        </div>
+
+        <div class="review">
+            <h3>Audience review's</h3>
+            <img src="">
+            <p>{{lastComment.name}}</p>
+            <p>Recently review: {{lastComment.comment}}</p>
+            <button ng-click="showReview = !showReview" ng-hide="showReview">See all reviews<i class="fa fa-angle-down fa-3x"></i></button>
+            <button ng-click="showReview = !showReview" ng-show="showReview">{{review[0].reviews.length}} Users reviews movies<i class="fa fa-angle-up fa-3x"></i></button>
+            <div ng-show="showReview">
+                <span>lame: {{review[0].lame}}<hr ng-style="showReview && setPercentageReview('lame')"></span>
+                <span>wow: {{review[0].wow}}<hr ng-style= "showReview && setPercentageReview('wow')"></span>
+                <span>wtf: {{review[0].wtf}}<hr ng-style="showReview && setPercentageReview('wtf')"></span>
+                <span>nice: {{review[0].nice}}<hr ng-style="showReview && setPercentageReview('nice')"></span>
+            </div>
+        </div>
+
+        <div class = "orderMovie">
+            <h3>Pick movie seats</h3>
+            <form>
+                <div class="col-xs-7">
+                    <label>Movie theater</label>
+                    <select ng-change = "changeCurrentMovie(currentBranch)"  ng-model='currentBranch' required ng-options="branch._id.branch + ' ' +  branch._id.cinema for branch in movies" ></select>
+                </div>
+
+                <div class="col-xs-4">
+                    <label>Seats</label>
+                    <select>
+                        <option ng-repeat="seatNumber in [1, 2, 3, 4]"> {{ seatNumber }} </option>
+                    </select>
+                </div>
+
+                <div class = "movieTime container">
+                    <label>Seats</label>
+                    <button class="col-xs-3" ng-click = "movieChooseByTime(CurrentBranch[$index]); itemClicked($index)" ng-repeat="timesMovie in CurrentBranch | limitTo: 4" ng-class="$index == selectedIndex ? 'timeChoose': 'nonTimeChoose' "> {{ CurrentBranch[$index]._id.time.substring(11,16)}} </button>
+                </div>
+
+                <div class = "auditorium">
+                    <h3>Screen</h3>
+                    <p>Center</p>
+                    <label>
+                        <input type="checkbox" ng-model="isChecked" ng-click = "setSeat(movieChoose._id.seats[$index], isChecked)" ng-disabled="{{movieChoose._id.seats[$index]}}.occupied" class="seatCheckbox" ng-repeat="seats in movieChoose._id.seats">{{movieChoose._id.seats[$index]}}
+                    </label>
+                </div>
+
+                <button id="buyBtn" ng-click="goToPaymentPage()" type="submit">Buy</button>
+
+            </form>
+
+            <!--<div class="relevantMovie">-->
+                <!--<div class="relevantMovieBox" ng-repeat="seatNumber in [1, 2, 3, 4]"> {{ seatNumber }}</div>-->
+            <!--</div>-->
+        </div>
+
+    </div>
+</div>

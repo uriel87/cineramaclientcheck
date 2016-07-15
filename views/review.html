@@ -1,0 +1,28 @@
+
+
+    <div class = "headOrder">
+        <a ui-sref="myOrders">
+            <span><i class="fa fa-arrow-left fa-2x container icon col-md-1"></i></span>
+        </a>
+    </div>
+
+    <div class = "headPushReview">
+        <p>The movie</p>
+        <p>{{movieName}}</p>
+        <p>Just end</p>
+    </div>
+
+
+    <div class = "mainPushReview">
+        <h3>How was it?</h3>
+        <img src="../images/lamePushReview.png" ng-click="pushReview('lame', commentUser)">
+        <img src="../images/WtfPushReview.png" ng-click="pushReview('wtf', commentUser)">
+        <img src="../images/wowPushReview.png" ng-click="pushReview('wow', commentUser)">
+        <img src="../images/nicePushReview.png" ng-click="pushReview('nice', commentUser)">
+        <p>Add your comment</p>
+        <textarea id="commentUser" ng-model="commentUser"></textarea>
+    </div>
+
+
+
+

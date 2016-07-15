@@ -1,0 +1,13 @@
+
+
+
+    <tab></tab>
+    <div class="container userOrderBody">
+        <div ng-repeat = "movie in moviesUser"  >
+            <div class = "movieOrderBox btnNgRepeat{{$index % 4}}" ng-click="goToPushReviewPage(movie._id.name, 'Yossi Levy')">
+                <p>{{movie._id.name}}</p>
+                <p>{{movie._id.cinema}}, {{movie._id.branch}}</p>
+                <p>{{movie._id.time.substring(0,10)}}, {{movie._id.time.substring(11,16)}}</p>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,39 @@
+﻿
+<header>
+    <tab></tab>
+</header>
+
+<div class = "mainBody">
+    <div ng-repeat = "movie in movies track by $index" ng-style="{{poster[$index]}}">
+        <div class="movieContextSelect" ng-if="$index < 4">
+            <p class="movieTitle">{{movie._id.name}}</p>
+            <h3>{{movie._id.time.substring(11,19)}}, <b>{{movie._id.cinema}}, </b>{{movie._id.branch}}</h3>
+            <!--<form action="movie.html">-->
+                <!--<a ui-sref="order({movie_name: movie._id.name })">{{movie._id.seatsLeft}}</a>-->
+            <!--</form>-->
+            <a ui-sref="order({movie_name: movie._id.name })">
+                <button class="btnNgRepeat{{$index % 4}}">{{movie._id.seatsLeft}} seats left</button>
+            </a>
+        </div>
+    </div>
+
+    <div class="movieContextSelectSmall" ng-click="goToOrderPage(movie._id.name)" ng-repeat = "movie in movies | orderBy: ['-movies._id.time'] : 'true'" ng-if="$index > 3">
+        <!--<a ui-sref="order({movie_name: movie._id.name })">-->
+            <h4 class="movieTitle">{{movie._id.name}}</h4>
+            <img src="{{movie.Poster}}" class="imgBackground">
+            <div class="movieDetailsSmallDiv">
+                <p>{{movie._id.time.substring(11,19)}} </p>
+                <p>{{movie._id.cinema}}</p>
+                <p class="grayColor"><i class="fa fa-map-marker"></i> {{movie._id.branch}}</p>
+                <p class="btnNgRepeatSmall{{$index % 4}}">{{movie._id.seatsLeft}} seats left</p>
+            </div>
+        <!--</a>-->
+    </div>
+
+
+    <!--<div class="movieContextSelectSmall" ng-repeat = "pos in poster" ng-style="{{poster[$index]}}">-->
+
+    <!--</div>-->
+
+
+</div>

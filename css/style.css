@@ -1,0 +1,697 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+@import url(https://fonts.googleapis.com/css?family=Prompt:400,600);
+
+
+*{margin:0;padding:0;}
+
+header, nav, section, footer, main, aside, article {
+	display: block;
+	font-family: sans-serif;
+}
+
+
+ul, li {
+	list-style: none;
+}
+
+
+.clear {
+	clear: both;
+    height:0;
+}
+
+
+
+a:hover, a:visited, a:link, a:active ,a[ui-sref]:hover, a[ui-sref]:visited, a[ui-sref]:link, a[ui-sref]:active  {
+	text-decoration: none;
+}
+
+a[ui-sref] {
+    text-decoration: none;
+}
+
+a, a:active, a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.productBox {
+    display: inline-block;
+    width: 30%;
+    height: 150px;
+    margin: 50px 5px;
+}
+
+.productBox img {
+    width: 90%;
+    height: 130px;
+}
+
+.productBox li {
+    display: inline-block;
+}
+
+.formPayment {
+    background-color: #fff;
+    margin: 50px 0px;
+}
+
+.paymentBody, .userOrderBody {
+    background-color: #f1f1f1;
+}
+
+.paymentBody h5 {
+    font-size: 20px;
+}
+
+.formPayment button {
+    width: 100%;
+    height: 50px;
+    background-color: #00c588;
+}
+
+.inputPayment {
+    margin: 25px auto;
+    width: 90%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.inputPayment label {
+    display: block;
+    font-size: 17px;
+    color: #bfbfbf;
+}
+
+.inputPayment input {
+    display: block;
+    width: 100%;
+    color: #505050;
+    font-size: 25px;
+    border: 0;
+    border-bottom: 1px solid #bfbfbf;
+    outline: 0;
+}
+
+.prudoctsCart {
+    text-align: center;
+}
+
+.prudoctsCart span {
+    position: relative;
+    top: 45px;
+    left: 30%;
+    background-color: #fff;
+    color: #fc6769;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 24px;
+    line-height: 2;
+}
+
+.movieOrderBox {
+    background-size: 100% 60px;
+    margin: 30px 0;
+    height: 120px;
+    text-align: center;
+    font-size: 20px;
+    color: #0c0c0c;
+    border-radius: 30px;
+    line-height: 32px;
+}
+
+.movieTicketBody {
+    background-color: #edeaea;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.movieTicketBody header {
+    text-align: center;
+}
+
+.movieTicketBody h4 {
+    font-weight: bold;
+}
+
+.movieTicketBody p {
+    color: #5f5e5e;
+    font-size: 14px;
+}
+
+
+.orderBox {
+    background-image: url(../images/bgOrders.jpg);
+    box-shadow: -5px 5px 15px -5px #888887;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.orderBox h3{
+    color: #fc686a;
+    border-bottom: 2px solid #edeaea;
+    padding: 20px 0px;
+    text-indent: 20px;
+    font-family: 'Bree Serif', serif;
+}
+
+.orderBox p:nth-child(2) {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.toPutngreapetforeachprudoct .col-xs-6 img {
+    width: 100px;
+    height: 125px;
+}
+
+.orderBox .col-xs-6 img {
+    width: 40%;
+    margin: auto;
+    left: 25%;
+    position: relative;
+}
+
+.qrImg {
+    width: 100%;
+}
+
+
+.orderBox hr {
+    width: 80%;
+    margin: auto;
+    height: 1px;
+    border: none;
+    background-color: #edeaea;
+}
+
+
+.blueOrderBox h3 {
+    color: #00b3fe;
+}
+
+
+.blueOrderBox h5 {
+    color: #676767;
+    font-size: 15px;
+}
+
+
+.blueOrderBox h4 {
+    text-align: center;
+}
+
+
+.blueOrderBox span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.loadingBody {
+    background-image: url(../images/loading.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    background-size: 100%;
+}
+
+
+.loadingBody img {
+    position: absolute;
+    width: 70%;
+    top: 150px;
+    left: 40px;
+}
+
+
+
+#bbox{
+    position: absolute;
+    top: 145px;
+    width: 35%;
+    left: 20%;
+}
+
+#rbox{
+    position: absolute;
+    top: 145px;
+    width: 10%;
+    left: 30%;
+    height: 60px;
+}
+
+#pbox{
+    position: absolute;
+    top: 145px;
+    width: 8%;
+    left: 68%;
+}
+
+#gbox{
+    position: absolute;
+    top: 170px;
+    width: 55%;
+    left: 25%;
+}
+
+
+.enjoyBody {
+    background-image: url(../images/enjoy.jpg);
+    width: 100%;
+    height: 618px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+.tab {
+    width: 49%;
+    height: 55px;
+    color: #6b6b6b;
+    background-color: #fff;
+    border: none;
+    border-bottom: 3px solid #fff;
+    margin-bottom: 3px;
+}
+
+
+
+.tabActive {
+    border-bottom: 3px solid #762fc8;
+}
+
+
+
+.movieContextSelect {
+    height: 450px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+
+.movieContextSelect  h3 {
+    position: relative;
+    top: 60px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.movieContextSelect button {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    top: 250px;
+    color: #fff;
+}
+
+
+.movieContextSelectSmall {
+    display: inline-block;
+    width: 48%;
+    height: 450px;
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    line-height: 2;
+    margin: 0px 2px 0px 4px;
+}
+
+
+.movieContextSelectSmall img {
+    width: 100%;
+    height: 50%;
+}
+
+.movieContextSelectSmall a {
+    color: #000;
+}
+
+
+.inlineBlock {
+    display: inline-block;
+}
+
+
+.movieContextSelectSmall p {
+    margin: -10px;
+}
+
+
+.grayColor {
+    color: #8e8e8e;
+}
+
+
+.movieContextSelectSmall button {
+    width: 50%;
+    height: 50px;
+    border: none;
+    background-color: transparent;
+}
+
+
+.movieDetailsSmallDiv {
+    position: relative;
+    top: 25px;
+    background: #fff;
+}
+
+.btnNgRepeatSmall0 {
+    color: #00c588;
+}
+
+
+.btnNgRepeatSmall1 {
+    color: #00b3fe;
+}
+
+
+.btnNgRepeatSmall2 {
+    color: #762fc8;
+}
+
+
+.btnNgRepeatSmall3 {
+    color: #f56d5f;
+}
+
+
+.btnNgRepeat0 {
+    background-color: #00c588;
+}
+
+
+.btnNgRepeat1 {
+    background-color: #00b3fe;
+}
+
+.btnNgRepeat2 {
+    background-color: #762fc8;
+}
+
+.btnNgRepeat3 {
+    background-color: #f56d5f;
+}
+
+
+
+.movieTitle {
+    height: 40px;
+    background-color: #000;
+    color: #fff;
+    line-height: 2;
+}
+
+.mainBody {
+    background-color: #f0f0f0;
+    margin: auto;
+    width: 97%;
+}
+
+.headOrder {
+    background-color: #000;
+    color: #999999;
+    height: 60px;
+}
+
+
+.headOrder a, .headOrder button{
+    color: #999999;
+    background-color: #000;
+    border: none;
+    height: 100%;
+}
+
+.headOrder h4 {
+    display: inline-block;
+    bottom: 20px;
+    left: 10%;
+}
+
+.headOrder .icon {
+    line-height: 2;
+}
+
+.orderBody {
+    background-color: #000;
+    font-family: 'Prompt', sans-serif;
+}
+
+.greenColor {
+    color: #008a5f;
+    border-color: #008a5f;
+}
+
+.greyColor {
+    color: #8b8b8b;
+}
+
+.greyLightColor {
+    color: #b6b6b6;
+}
+
+.Rating {
+    position: absolute;
+    left: 66%;
+    top: 275px;
+    font-size: 30px;
+    border: 5px solid #008a5f;
+    border-radius: 107px;
+    width: 30%;
+    height: 16%;
+    text-align: center;
+}
+
+
+.fullCast {
+    height: 85px;
+    position: relative;
+    bottom: 0px;
+    color: #8b8b8b;
+    width: 65%;
+}
+
+
+.review {
+    border-top: 3px solid #8b8b8b;
+    color: #8b8b8b;
+    margin-top: 10px;
+}
+
+.review h3 {
+    color: #8b8b8b;
+    margin-bottom: 20px;
+}
+
+.review img {
+    width: 30%;
+}
+
+.review button {
+    width: 100%;
+    background-color: #008a5f;
+    color: #04243f;
+    font-size: 15px;
+    text-align: left;
+    text-indent: 10px;
+    height: 50px;
+    border: none;
+    line-height: 3;
+    margin-bottom: 20px;
+}
+
+
+.review button i {
+    /*position: absolute;*/
+    text-indent: 10px;
+    /*top: 545px;*/
+    float: right;
+}
+
+
+.review hr{
+    max-width: 80%;
+    position: relative;
+    left: 60px;
+    bottom: 32px;
+    height: 3px;
+    border: none;
+}
+
+.movieDetailsOrder {
+    width: 65%;
+}
+
+.orderMovie h3 {
+    color: #b6b6b6;
+}
+
+.orderMovie form {
+    border-top: 2px solid #8b8b8b;
+    padding-top: 20px;
+}
+
+
+form select {
+    background-color: #fff;
+    color: #8b8b8b;
+    height: 35px;
+    width: 100%;
+}
+
+
+.movieTime {
+    height:100px;
+    clear: both;
+}
+
+.movieTime label {
+    display: block;
+    margin-top: 10px;
+}
+
+
+.nonTimeChoose {
+    display: inline-block;
+    background: transparent;
+    color: #8b8b8b;
+    height: 40px;
+    display: block;
+    border: none;
+    font-size: 20px;
+}
+
+.timeChoose {
+    display: inline-block;
+    background: #008a5f;
+    color: #fff;
+    height: 40px;
+    display: block;
+    border: none;
+    font-size: 20px;
+}
+
+.auditorium {
+    border-top: 3px solid #fff;
+    text-align: center;
+    color: #fff;
+}
+
+.auditorium p{
+    color: #8b8b8b;
+}
+
+
+input[type=checkbox]{
+    width: 28px;
+    margin: 10px 3px !important;
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+}
+
+#buyBtn {
+    width: 80%;
+    background-color: #fff;
+    color: #00c588;
+    font-size: 35px;
+    margin: 22px 35px;
+    border: none;
+}
+
+.relevantMovie {
+
+}
+
+.relevantMovieBox {
+}
+
+.enjoyLinkToMain {
+    position: relative;
+    width: 80%;
+    height: 60px;
+    top: 520px;
+    margin: auto;
+    text-align: center;
+    line-height: 2;
+    border-radius: 30px;
+    background-color: #f5cbc8;
+    font-size: 30px;
+    cursor: default;
+}
+
+.enjoyLinkToMain a {
+    color: #777;
+    text-decoration: none;
+    cursor: default;
+}
+
+a[ui-sref]:hover, a[ui-sref]:visited, a[ui-sref]:link, a[ui-sref]:active
+{
+    text-decoration: none;
+}
+
+.headPushReview {
+    background-image: url(../images/bgPushReview.jpg);
+    width: 100%;
+    height: 199px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 30px 0px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.headPushReview p:nth-child(1) {
+    color: #999999;
+}
+
+
+.headPushReview p:nth-child(2) {
+    color: #a6a3a3;
+}
+
+
+.headPushReview p:nth-child(3) {
+    color: #d9d8d8;
+}
+
+
+.mainPushReview {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.mainPushReview img {
+    width: 100px;
+    height: 100px;
+    margin: 10px
+}
+
+
+.mainPushReview p {
+    color:#5e5e5e;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+
+#commentUser {
+    display: block;
+    margin: 20px auto;
+    width: 70%;
+    height: 150px;
+    border: 1px solid #2afd9c;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uriel87/cinerama-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uriel87/cinerama/issues"
+  },
+  "homepage": "https://github.com/uriel87/cinerama-client#readme",
+  "description": ""
+}

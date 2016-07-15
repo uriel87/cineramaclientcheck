@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <title>Cinerama</title>
+
+        <!--CSS-->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/circle.css">
+        <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="./bower_components/font-awesome/css/font-awesome.min.css">
+
+
+
+        <!-- Bower Components -->
+        <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="./bower_components/angular/angular.min.js"></script>
+        <script src="./bower_components/angular-animate/angular-animate.js"></script>
+        <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+
+
+        <!--App, Controllers, Directives -->
+        <script src="js/app.js"></script>
+        <script src="js/directives.js"></script>
+        <script src="/js/controllers/script.js"></script>
+        <script src="js/controllers/movie.controller.js"></script>
+        <script src="js/controllers/orderMovie.controller.js"></script>
+        <script src="js/controllers/pruducts.controller.js"></script>
+        <script src="js/controllers/movieTicket.controller.js"></script>
+        <script src="js/controllers/myOrders.controller.js"></script>
+        <script src="js/controllers/user.controller.js"></script>
+        <script src="js/controllers/review.controller.js"></script>
+
+
+
+
+    </head>
+    <body ng-app="app">
+
+        <div>
+            <!--Injected Pages-->
+            <div class="view" ui-view>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

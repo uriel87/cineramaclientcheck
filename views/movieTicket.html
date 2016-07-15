@@ -1,0 +1,70 @@
+
+<!--$scope.movieDetails = $state.params.movieDetails;-->
+<!--$scope.Userseats = $state.params.seats;-->
+
+
+<div class="container movieTicketBody" xmlns="http://www.w3.org/1999/html">
+
+    <header>
+        <h4>This is your recipt!</h4>
+        <p>Scan the coeds at the cinema</p>
+        <p>Stands to recive the items!</p>
+    </header>
+
+    <main>
+        <div class = "orderBox">
+            <h3>Snacks & Drinks</h3>
+            <div ng-repeat=" product in cart">
+                <div class="col-xs-6">
+                    <P>Item</P>
+                    <p>{{product.quantity}} {{product.size}}. {{product.name}}</p>
+                </div>
+                <div class="col-xs-6">
+                    <img src="{{product.image}}">
+                </div>
+                <hr>
+            </div>
+            <img src="../images/qrR.png" class="qrImg">
+        </div>
+
+        <div class = "orderBox blueOrderBox">
+            <h3>Movie tickets</h3>
+            <h4>{{movieDetails._id.name}}</h4>
+            <div class="col-xs-9">
+                <h5><i class="fa fa-map-marker"></i> location</h5>
+                <p>{{movieDetails._id.cinema}} {{movieDetails._id.branch}}</p>
+            </div>
+
+            <div class="col-xs-3">
+                <h5>time</h5>
+                <span>{{movieDetails._id.time.substring(11,16)}}</span>
+            </div>
+
+            <div ng-repeat=" seat in Userseats">
+                <div class="col-xs-4">
+                    <h5>theater</h5>
+                    <p>{{movieDetails._id.auditorium}}</p>
+                </div>
+
+
+                <div class="col-xs-4">
+                    <h5>row</h5>
+                    <p>{{seat.row}}</p>
+                </div>
+
+
+                <div class="col-xs-3">
+                    <h5>seats</h5>
+                    <p>{{seat.number}}</p>
+                </div>
+                <hr>
+            </div>
+
+            <a ui-sref="enjoy">
+                <img src="../images/qrB.png" class="qrImg">
+            </a>
+
+        </div>
+
+    </main>
+</div>

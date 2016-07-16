@@ -46,11 +46,22 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
 
 
 
-
     $http.post("https://cineramaserver.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
-        $scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
+        var urltrailer = movieTrailer.replace("watch?v=", "v/");
+        //$scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
+        $scope.movieTrailer = $sce.trustAsResourceUrl(urltrailer);
+        //$scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
+        //$scope.movieTrailer = movieTrailer;
+        //var url = url.replace("watch?v=", "v/");
         console.log("movie trailer " + $scope.movieTrailer);
     });
+
+
+    // $http.post("https://cineramaserver.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
+    //     $scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
+    //     $scope.movieTrailer = movieTrailer;
+    //     console.log("movie trailer " + $scope.movieTrailer);
+    // });
 
 
     // $http.post("https://cinerama.herokuapp.com/getMovieReview/", data).success(function(review, status) {
@@ -80,7 +91,7 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
         $scope.selectedIndex = -1;
         for (var i = 0; i < $scope.movies.length; i++) {
             if( ($scope.movies[i]._id.branch == currentBranch._id.branch) && ($scope.movies[i]._id.cinema == currentBranch._id.cinema) && ($scope.movies[i]._id.auditorium == currentBranch._id.auditorium)) {
-                $scope.CurrentBranch.push(angular.merge({}, $scope.movies[i]));
+                $scope.CurrentBranch.push(angular.extend({}, $scope.movies[i]));
             }
         }
         console.log($scope.CurrentBranch);

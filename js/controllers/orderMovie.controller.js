@@ -47,12 +47,12 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
 
 
     $http.post("https://cineramaserver.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
+        if(!movieTrailer) {
+            return null;
+        }
         var urltrailer = movieTrailer.replace("watch?v=", "v/");
         //$scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
         $scope.movieTrailer = $sce.trustAsResourceUrl(urltrailer);
-        //$scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
-        //$scope.movieTrailer = movieTrailer;
-        //var url = url.replace("watch?v=", "v/");
         console.log("movie trailer " + $scope.movieTrailer);
     });
 

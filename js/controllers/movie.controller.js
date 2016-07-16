@@ -2,9 +2,8 @@
 
 
 
-
-app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function($scope, $http, $stateParams, $state) {
-
+app.controller('moviesCtl', ['$scope', '$http', '$sce','$stateParams', '$state',function($scope, $http, $sce, $stateParams, $state) {
+    
     $scope.movies = [];
     $scope.poster = [];
     $scope.currentTab = true;
@@ -27,7 +26,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
             $scope.movies.push(angular.extend({},MovieDetails, data[i]));
             //MovieDetails.Poster = "https://" + MovieDetails.Poster.substr(6);
             var temp = {
-                "background-image" : "url("+ MovieDetails.Poster +")",
+                "background-image" : "url("+ $sce.trustAsResourceUrl(MovieDetails.Poster) +")",
                 "background-repeat": "no-repeat",
                 "background-size": "100% 450px",
                 "background-position" : "0px 50px"

@@ -24,7 +24,8 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
 
     function addDetailsMovie (data, i) {
         $http.post("https://cineramaserver.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
-            $scope.movies.push(angular.extend(MovieDetails, data[i]));
+            $scope.movies.push(angular.extend({},MovieDetails, data[i]));
+            MovieDetails.Poster = "https://" + MovieDetails.Poster.substr(6);
             var temp = {
                 "background-image" : "url("+ MovieDetails.Poster +")",
                 "background-repeat": "no-repeat",
@@ -32,7 +33,8 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
                 "background-position" : "0px 50px"
             }
             $scope.poster[i] = temp;
-            //console.log($scope.poster[i]);
+            console.log($scope.poster[i]);
+            //console.log($scope.movies);
         })
     }
 

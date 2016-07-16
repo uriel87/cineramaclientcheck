@@ -33,7 +33,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
                 "background-position" : "0px 50px"
             }
             $scope.poster[i] = temp;
-            console.log($scope.poster[i]);
+            //console.log($scope.poster[i]);
             //console.log($scope.movies);
         })
     }

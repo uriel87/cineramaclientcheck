@@ -12,19 +12,6 @@
         <iframe class="embed-responsive-item" ng-src={{movieTrailer}}></iframe>
     </div>
 
-    <!--<iframe-->
-            <!--data-youtube-id="{{movieTrailer}}"-->
-            <!--src="//www.youtube.com/embed/" + {{movieTrailer}}>-->
-    <!--</iframe>-->
-
-    <!--<iframe src={{movieTrailer}}></iframe>-->
-
-    <!--<video controls="controls"-->
-           <!--class="video-stream"-->
-           <!--x-webkit-airplay="allow"-->
-           <!--data-youtube-id="-k4knGRY8jA"-->
-           <!--src={{movieTrailer}}></video>-->
-
     <div class = "container">
 
         <div class="movieDetailsOrder">
@@ -33,9 +20,6 @@
             <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.Actors.substring(0, movieDetails.Actors.indexOf(',') + 7)}}...</span></p>
             <p class = " greyColor" ng-click="showCast = !showCast" ng-hide="showCast">See full cast  <i class="fa fa-angle-right fa-1x icon" ></i></p>
         </div>
-        <!--<div class = "Rating">-->
-            <!--<span class = "greyLightColor">{{movieDetails.imdbRating}}</span></br><span class = "greyColor">imdb</span>-->
-        <!--</div>-->
         <div class="c100 p{{imdbRating}} small green">
             <span>{{movieDetails.imdbRating}}<br>imdb</span>
             <div class="slice">

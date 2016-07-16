@@ -1075,3 +1075,37 @@
 .c100.orange.dark:hover > span {
   color: #e08833;
 }
+
+
+@media only screen and (min-device-width: 357px) and (max-device-width: 740px) {
+
+  .c100 {
+    bottom: 310px;
+    left: 280px;
+  }
+
+}
+
+
+@media only screen and (max-device-width: 590px) {
+
+  .c100 {
+    bottom: 191px;
+    left: 200px;
+  }
+
+}
+
+
+
+@media only screen and (min-device-width: 357px) and (max-device-width: 670px) {
+
+  .c100 {
+    bottom: 260px;
+    left: 235px;
+  }
+
+}
+
+
+

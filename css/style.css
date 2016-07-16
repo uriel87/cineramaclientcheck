@@ -420,6 +420,7 @@ a, a:active, a:focus {
     background-color: #000;
     color: #999999;
     height: 60px;
+    text-align: left;
 }
 
 
@@ -484,6 +485,7 @@ a, a:active, a:focus {
     border-top: 3px solid #8b8b8b;
     color: #8b8b8b;
     margin-top: 10px;
+    text-align: left;
 }
 
 .review h3 {
@@ -528,6 +530,7 @@ a, a:active, a:focus {
 
 .movieDetailsOrder {
     width: 65%;
+    text-align: left;
 }
 
 .orderMovie h3 {

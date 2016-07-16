@@ -9,7 +9,7 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
     $scope.poster = [];
     $scope.currentTab = true;
 
-    $http.post("https://cineramaserver.herokuapp.com/getAllMovies/").success(function (data) {
+    $http.post("http://cineramaserver.herokuapp.com/getAllMovies/").success(function (data) {
 
         for(var i = 0; i < data.length; i++) {
             addDetailsMovie(data, i);
@@ -23,9 +23,9 @@ app.controller('moviesCtl', ['$scope', '$http','$stateParams', '$state',function
 
 
     function addDetailsMovie (data, i) {
-        $http.post("https://cineramaserver.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
+        $http.post("http://cineramaserver.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
             $scope.movies.push(angular.extend({},MovieDetails, data[i]));
-            MovieDetails.Poster = "https://" + MovieDetails.Poster.substr(6);
+            //MovieDetails.Poster = "https://" + MovieDetails.Poster.substr(6);
             var temp = {
                 "background-image" : "url("+ MovieDetails.Poster +")",
                 "background-repeat": "no-repeat",

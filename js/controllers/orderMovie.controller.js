@@ -2,51 +2,40 @@
 
 app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',function($scope, $http, $sce, $stateParams, $state) {
 
-    //$scope.movie.name = $stateParams.movie_name;
-
     $scope.CurrentBranch = [];
     $scope.movieChoose = null;
-    // $scope.moviePage = $stateParams.movie_name;
     $scope.Userseats = [];
     $scope.moviePage = $state.params.movie_name;
-
-
 
 
     var data = {
         name: $scope.moviePage
     };
 
-    // $http.post("https://cinerama.herokuapp.com/getMovieDetails/", data).success(function(movie, status) {
-    //     $scope.movies = movie;
-    //     console.log($scope.movies);
-    // });
 
     $http.post("https://cineramaserver.herokuapp.com/getMovieDetails/" , data).success(function(movie, status) {
         $scope.movies = movie;
-        console.log($scope.movies);
+        //console.log($scope.movies);
     });
 
 
 
     $http.post("https://cineramaserver.herokuapp.com/getMovie/", data).success(function(movieDetails, status) {
         $scope.movieDetails = movieDetails;
-        console.log($scope.movieDetails.imdbRating);
         $scope.imdbRating = $scope.movieDetails.imdbRating * 10;
-        console.log($scope.movieDetails);
-        console.log($scope.movieDetails);
+        //console.log($scope.movieDetails);
     });
 
 
-
-    // $http.post("https://cinerama.herokuapp.com/getMovieCategory/", data).success(function(movieDetails, status) {
-    //     $scope.relevantMovie = movieDetails;
-    //     console.log($scope.relevantMovie);
-    // });
-
-
-
     $http.post("https://cineramaserver.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
+
+        // if(!movieTrailer) {
+        //     return null;
+        // }
+        // var urltrailer = movieTrailer.replace("watch?v=", "v/");
+        // $scope.movieTrailer = $sce.trustAsResourceUrl(urltrailer.toString());
+        // //console.log("movie trailer " + $scope.movieTrailer);
+
         if(!movieTrailer) {
             return null;
         }
@@ -54,29 +43,14 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
         //$scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
         $scope.movieTrailer = $sce.trustAsResourceUrl(urltrailer);
         console.log("movie trailer " + $scope.movieTrailer);
+
     });
-
-
-    // $http.post("https://cineramaserver.herokuapp.com/getMovieTrailer/", data).success(function(movieTrailer, status) {
-    //     $scope.movieTrailer = $sce.trustAsResourceUrl(movieTrailer);
-    //     $scope.movieTrailer = movieTrailer;
-    //     console.log("movie trailer " + $scope.movieTrailer);
-    // });
-
-
-    // $http.post("https://cinerama.herokuapp.com/getMovieReview/", data).success(function(review, status) {
-    //     $scope.review = review;
-    //     $scope.lastComment = review[0].reviews[review[0].reviews.length - 1];
-    //     console.log($scope.review);
-    //     console.log($scope.lastComment);
-    // });
 
 
     $http.post("https://cineramaserver.herokuapp.com/getMovieReview/", data).success(function(review, status) {
         $scope.review = review;
         $scope.lastComment = review[0].reviews[review[0].reviews.length - 1];
-        console.log($scope.review);
-        console.log($scope.lastComment);
+        //console.log($scope.review);
     });
 
 
@@ -94,13 +68,13 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
                 $scope.CurrentBranch.push(angular.extend({}, $scope.movies[i]));
             }
         }
-        console.log($scope.CurrentBranch);
+        //console.log($scope.CurrentBranch);
     };
 
 
     $scope.movieChooseByTime = function(movieChoose) {
         $scope.movieChoose = movieChoose;
-        console.log($scope.movieChoose);
+        //console.log($scope.movieChoose);
     };
 
     $scope.itemClicked = function ($index) {
@@ -170,38 +144,13 @@ app.controller('orderCtl', ['$scope', '$http', '$sce','$stateParams', '$state',f
     $scope.setSeat = function(seats, isChecked) {
         if(isChecked) {
             $scope.Userseats.push(seats);
-            console.log($scope.Userseats);
+            //console.log($scope.Userseats);
         } else {
             var index = $scope.Userseats.indexOf(seats);
             $scope.Userseats.splice(index, 1);
-            console.log($scope.Userseats);
+            //console.log($scope.Userseats);
         }
     };
-
-
-    // $scope.sendOrderRequest = function(seats) {
-    //
-    //     for (var i = 0; i < $scope.Userseats.length; i++) {
-    //
-    //         var orderUser = {
-    //             name: $scope.movieChoose._id.name,
-    //             date: $scope.movieChoose._id.time,
-    //             auditorium: $scope.movieChoose._id.auditorium,
-    //             cinema: $scope.movieChoose._id.cinema,
-    //             branch: $scope.movieChoose._id.branch,
-    //             row: $scope.Userseats[i].row,
-    //             number: $scope.Userseats[i].number,
-    //             email: 'Yossi.Levy@gmail.com'
-    //         }
-    //
-    //         $http.post("https://cinerama.herokuapp.com/setOrderMovie/", orderUser).success(function(res, status) {
-    //             console.log(res);
-    //             $state.go('enjoy');
-    //         });
-    //         $state.go('loading');
-    //
-    //     }
-    // };
 
 
 

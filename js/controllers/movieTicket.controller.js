@@ -5,12 +5,6 @@ app.controller('movieTicketCtl', ['$scope', '$http','$stateParams', '$state',fun
     $scope.movieDetails = $state.params.movieDetails;
     $scope.Userseats = $state.params.seats;
 
-
-    console.log($scope.cart);
-    console.log($scope.movieDetails);
-    console.log($scope.Userseats);
-
-
 }]);
 
 

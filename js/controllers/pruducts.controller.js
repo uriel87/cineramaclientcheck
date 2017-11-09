@@ -8,7 +8,7 @@ app.controller('paymentCtl', ['$scope', '$http','$stateParams', '$state',functio
 
 	$http.post("https://cineramaserver.herokuapp.com/getAllProduct/").success(function (data) {
 		$scope.products = data;
-		console.log(data);
+		//console.log(data);
 	}).error(function () {
 		return "error was happened or the result is empty";
 	});
@@ -28,7 +28,6 @@ app.controller('paymentCtl', ['$scope', '$http','$stateParams', '$state',functio
 	};
 
 	$scope.getCartPrice = function () {
-		//console.log($scope.cart);
 		var total = 0;
 		var ticktPrice = 0
 		if ($scope.Userseats.length) {
@@ -61,10 +60,8 @@ app.controller('paymentCtl', ['$scope', '$http','$stateParams', '$state',functio
 				cart: $scope.cart
 			}
 
-			//$state.go('movieTicket' , dataOrder);
-
             $http.post("https://cineramaserver.herokuapp.com/setOrderMovie/", orderUser).success(function(res, status) {
-	            console.log(res);
+	            //console.log(res);
 				$state.go('movieTicket' , dataOrder);
             });
 			$state.go('loading');
@@ -73,12 +70,9 @@ app.controller('paymentCtl', ['$scope', '$http','$stateParams', '$state',functio
 	};
 
 
-
 	$scope.returnToOrder = function () {
 		$state.go('order' , {movie_name: $scope.movieDetails._id.name});
 	};
-
-
 
 
 }]);

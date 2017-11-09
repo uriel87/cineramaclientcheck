@@ -13,9 +13,7 @@ app.controller('moviesCtl', ['$scope', '$http', '$sce','$stateParams', '$state',
         for(var i = 0; i < data.length; i++) {
             addDetailsMovie(data, i);
         }
-
-        console.log(data);
-
+        //console.log(data);
     }).error(function () {
         return "error was happened or the result is empty";
     });
@@ -24,7 +22,6 @@ app.controller('moviesCtl', ['$scope', '$http', '$sce','$stateParams', '$state',
     function addDetailsMovie (data, i) {
         $http.post("https://cineramaserver.herokuapp.com/getMovie/", {name: data[i]._id.name}).success(function (MovieDetails) {
             $scope.movies.push(angular.extend({},MovieDetails, data[i]));
-            //MovieDetails.Poster = "https://" + MovieDetails.Poster.substr(6);
             var temp = {
                 "background-image" : "url("+ $sce.trustAsResourceUrl(MovieDetails.Poster) +")",
                 "background-repeat": "no-repeat",
@@ -32,8 +29,6 @@ app.controller('moviesCtl', ['$scope', '$http', '$sce','$stateParams', '$state',
                 "background-position" : "0px 50px"
             }
             $scope.poster[i] = temp;
-            //console.log($scope.poster[i]);
-            //console.log($scope.movies);
         })
     }
 
@@ -52,42 +47,6 @@ app.controller('moviesCtl', ['$scope', '$http', '$sce','$stateParams', '$state',
 
 
 
-
-
-
-
-
-
-// app.controller('moviesCtl', ['$scope', '$http',function($scope, $http) {
-//
-//     $scope.movies = [];
-//     var i = 0;
-// 	$http.post("https://cinerama.herokuapp.com/getAllMovies/").success(function (data) {
-// 		//$scope.movies = data;
-//         var movieName;
-//         angular.forEach(data, function () {
-//             movieName = data[i]._id.name;
-//             console.log("movieName i: " + i + ": "  + movieName);
-//             $http.post("https://cinerama.herokuapp.com/getMovie/", {name: movieName}).success(function (MovieDetails) {
-//                 console.log("movieName in http i: " + i + ": "  + movieName);
-//                 //angular.extend(data[i], MovieDetails);
-//                 //console.log(data[i]);
-//                 // posters.push(MovieDetails);
-//                 //console.log("movie in i: " + data[i]._id.name);
-//                 //$scope.movies.push(angular.extend(MovieDetails, data[i]));
-//                 //$scope.movies.push(data[i]);
-//                 $scope.movies.push(angular.merge(MovieDetails, data[i+1]));
-//                 //console.log("$scope.movies i " + i + ": " + $scope.movies[i]);
-//             })
-//             i++;
-//         })
-//         //$scope.movies = data
-//         console.log($scope.movies);
-// 	}).error(function () {
-// 		return "error was happened or the result is empty";
-// 	});
-//
-// }]);
 
 
 

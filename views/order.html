@@ -15,20 +15,20 @@
     <div class = "container">
 
         <div class="movieDetailsOrder">
-            <p><span class=" greenColor">{{movieDetails.Genre}}</span><span class="greyColor"> {{movieDetails.Country}}</span></p>
-            <p><span class=" greyColor">Director:</span><span class="greyLightColor"> {{movieDetails.Director}}</span></p>
-            <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.Actors.substring(0, movieDetails.Actors.indexOf(',') + 7)}}...</span></p>
+            <p><span class=" greenColor">{{movieDetails.genre}}</span><span class="greyColor"> {{movieDetails.country}}</span></p>
+            <p><span class=" greyColor">Director:</span><span class="greyLightColor"> {{movieDetails.director}}</span></p>
+            <p><span class=" greyColor" ng-hide="showCast">Cast: {{movieDetails.actors.substring(0, movieDetails.actors.indexOf(',') + 7)}}...</span></p>
             <p class = " greyColor" ng-click="showCast = !showCast" ng-hide="showCast">See full cast  <i class="fa fa-angle-right fa-1x icon" ></i></p>
         </div>
-        <div class="c100 p{{imdbRating}} small green">
-            <span>{{movieDetails.imdbRating}}<br>imdb</span>
+        <div class="c100 p{{movieDetails.rating}} small green">
+            <span>{{movieDetails.rating}}<br>imdb</span>
             <div class="slice">
                 <div class="bar"></div>
                 <div class="fill"></div>
             </div>
         </div>
         <div class = "fullCast" ng-show="showCast" ng-click="showCast = !showCast">
-            <p>Cast: {{movieDetails.Actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>
+            <p>Cast: {{movieDetails.actors}} <i class="fa fa-angle-up" ng-show="showCast"></i></p>
         </div>
 
         <div class="review">
@@ -61,6 +61,7 @@
                     </select>
                 </div>
 
+                <!--TODO metrix 2x2-->
                 <div class = "movieTime container">
                     <label>Seats</label>
                     <button class="col-xs-3" ng-click = "movieChooseByTime(CurrentBranch[$index]); itemClicked($index)" ng-repeat="timesMovie in CurrentBranch | limitTo: 4" ng-class="$index == selectedIndex ? 'timeChoose': 'nonTimeChoose' "> {{ CurrentBranch[$index]._id.time.substring(11,16)}} </button>
@@ -78,8 +79,9 @@
 
             </form>
 
+            <!--<h4>Relevant movie</h4>-->
             <!--<div class="relevantMovie">-->
-                <!--<div class="relevantMovieBox" ng-repeat="seatNumber in [1, 2, 3, 4]"> {{ seatNumber }}</div>-->
+                <!--<div class="relevantMovieBox" ng-repeat="seatNumber in [1, 2, 3]"> {{ relevantMovie }}</div>-->
             <!--</div>-->
         </div>
 
